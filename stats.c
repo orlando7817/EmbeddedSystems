@@ -40,4 +40,30 @@ void main() {
 
 }
 
-/* Add other Implementation File Code Here */
+int find_median(unsigned char array_dataset[], unsigned char array_length){
+
+}
+
+int mean(unsigned char array_dataset[], unsigned char array_length){
+
+}
+
+int find_maximum(unsigned char array_dataset[], unsigned char array_length){
+
+}
+
+int find_minimum(unsigned char array_dataset[], unsigned char array_length){
+
+}
+
+unsigned char sort_array(unsigned char array_dataset[], unsigned char array_length){
+
+}
+
+void print_statistics(int minimum, int maximum, int mean, int median){
+
+}
+
+void print_array(unsigned char array_dataset[], unsigned char array_length){
+
+}
