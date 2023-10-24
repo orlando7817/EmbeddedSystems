@@ -9,13 +9,19 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file - stats.c 
+ * @brief - This application performs statistical analytics on a dataset such as:
+ *  - Minimum
+ *  - Maximum
+ *  - Mean 
+ *  - Median. 
  *
- * <Add Extended Description Here>
+ * @description - Main has a defined dataset as an array of 40 characters, array will sorted 
+ * in a descending order in order to perform analytical functions. After statistics 
+ * are calculated results are printed through print_array and print_statistics functions 
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author <Juan Orlando Guzman Centeno>
+ * @date <October 17 2023 >
  *
  */
 
@@ -39,14 +45,14 @@ void main() {
 	int median, mean, maximum, minimum;
 
   /* Statistics and Printing Functions Go Here */
+	sort_array(test, SIZE);
 	median = find_median(test, SIZE);
 	mean = find_mean(test, SIZE);
- 	sort_array(test, SIZE);
-	printf("\n %d", median);
-	printf("\n %d", mean);
-	for(int i = 0 ; i < SIZE ; i++){
-		printf("%d, ",test[i]);
-	}
+	maximum = find_maximum(test, SIZE);
+       	minimum = find_minimum(test, SIZE);	
+	print_array(test, SIZE);
+	print_statistics(minimum, maximum, mean, median);
+
 }
 
 int find_median(unsigned char *ptr, int array_length){
@@ -81,11 +87,11 @@ int find_mean(unsigned char *ptr, int array_length){
 }
 
 int find_maximum(unsigned char *ptr, int array_length){
-
+	return ptr[0];
 }
 
 int find_minimum(unsigned char *ptr, int array_length){
-
+	return ptr[39];
 }
 
 unsigned char sort_array(unsigned char *ptr, int array_length){
@@ -103,9 +109,28 @@ unsigned char sort_array(unsigned char *ptr, int array_length){
 }
 
 void print_statistics(int minimum, int maximum, int mean, int median){
-	
+	printf("\nStatistical analytics on a dataset \n");
+	printf(" \n");
+	printf("Minimum value of dataset: %d \n", minimum);
+	printf("Maximum value of dataset: %d \n", maximum);
+	printf("Mean value of dataset: %d \n", mean);
+	printf("Median value of dataset: %d \n", median);
+	printf("\n\n");
 }
 
 void print_array(unsigned char *ptr, int array_length){
+	printf("Descending order dataset \n");
+	
+	for(int i = 0 ; i < SIZE ; i++){
+		if(i % 8 == 0){
+			printf("\n");
+		}
+		if(i < 39){
+			printf("%d, ",ptr[i]);
+		}
+		else{
+			printf("%d \n", ptr[i]);
+		}
+	}
 
 }
