@@ -29,41 +29,83 @@
 
 void main() {
 
-  unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
+	unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
                               114, 88,   45,  76, 123,  87,  25,  23,
                               200, 122, 150, 90,   92,  87, 177, 244,
                               201,   6,  12,  60,   8,   2,   5,  67,
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
   /* Other Variable Declarations Go Here */
+	int median, mean, maximum, minimum;
+
   /* Statistics and Printing Functions Go Here */
+	median = find_median(test, SIZE);
+	mean = find_mean(test, SIZE);
+ 	sort_array(test, SIZE);
+	printf("\n %d", median);
+	printf("\n %d", mean);
+	for(int i = 0 ; i < SIZE ; i++){
+		printf("%d, ",test[i]);
+	}
+}
+
+int find_median(unsigned char *ptr, int array_length){
+	int median_value = 0;
+	unsigned char position_x, position_y;
+	//if array size is pair, position resulted from division 
+	if(ptr == NULL){
+		return 0;
+	}
+	if((array_length % 2) == 0){
+		position_y = array_length / 2;
+		position_x = position_y - 1;
+		median_value = ((ptr[position_x]) + (ptr[position_y])) / 2; 		
+	}
+	else{
+		median_value = (ptr[(array_length / 2)]);
+	}
+	return median_value;
+}
+
+int find_mean(unsigned char *ptr, int array_length){
+	int mean_value = 0, sum_value = 0;
+	if(ptr == NULL){
+		return 0;
+	}
+	for(int i = 0; i < array_length ; i++){
+		sum_value += ptr[i]; 
+	}
+	mean_value = sum_value / array_length;
+	return mean_value;
+		
+}
+
+int find_maximum(unsigned char *ptr, int array_length){
 
 }
 
-int find_median(unsigned char array_dataset[], unsigned char array_length){
+int find_minimum(unsigned char *ptr, int array_length){
 
 }
 
-int mean(unsigned char array_dataset[], unsigned char array_length){
+unsigned char sort_array(unsigned char *ptr, int array_length){
+	unsigned char temp;
+	for(int i = 0; i < array_length; i++){
+		for(int j = i + 1 ; j < array_length ; j++){
+			if(ptr[i] < ptr[j]){
+				temp = ptr[i];
+				ptr[i] = ptr[j];
+				ptr[j] = temp;
+			}	
+		}
 
-}
-
-int find_maximum(unsigned char array_dataset[], unsigned char array_length){
-
-}
-
-int find_minimum(unsigned char array_dataset[], unsigned char array_length){
-
-}
-
-unsigned char sort_array(unsigned char array_dataset[], unsigned char array_length){
-
+	}
 }
 
 void print_statistics(int minimum, int maximum, int mean, int median){
-
+	
 }
 
-void print_array(unsigned char array_dataset[], unsigned char array_length){
+void print_array(unsigned char *ptr, int array_length){
 
 }

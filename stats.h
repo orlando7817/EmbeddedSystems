@@ -41,14 +41,14 @@
  * If length of array is even, the median is the result of the sum of
  * the two middle values divided by 2.
  *
- * @param unsigned char array_dataset[] - Ordered array to determine median 
- * @param unsigned char array_length - Length of array_dataset
+ * @param unsigned char *ptr - Pointer to ordered array to determine median 
+ * @param int array_length - Length of array
  * 
  * @return int median_value
  *
  */
 
-int find_median(unsigned char array_dataset[], unsigned char array_length);
+int find_median(unsigned char *ptr, int array_length);
 
 /**
  * @brief Given an array of data and a length, returns the mean
@@ -57,13 +57,13 @@ int find_median(unsigned char array_dataset[], unsigned char array_length);
  * summing all the values in the array and dividing by the length of the 
  * array.
  *
- * @param unsigned array_dataset[] - Array of data mean will be calculated
- * @param unsigned array_length - Length of array_dataset
+ * @param unsigned char *ptr - Pointer to array median will be calculated
+ * @param int array - Length of array
  *
  * @return int mean_value - Result from the average of array_dataset values
  */
  
-int mean(unsigned char array_dataset[], unsigned char array_length);
+int find_mean(unsigned char *ptr, int array_length);
 
 
 /**
@@ -73,13 +73,13 @@ int mean(unsigned char array_dataset[], unsigned char array_length);
  * by comparing each value in the array, storing the highest between both values, looping
  * until ending the array. 
  *
- * @param unsigned array_dataset[] - Array of data to determine maximum value
- * @param unsigned array_length - Length of array_dataset
+ * @param unsigned char *ptr - Pointer to array maximum value will be calculated
+ * @param int array_length - Length of array
  *
  * @return int maximum_value
  */
 
-int find_maximum(unsigned char array_dataset[], unsigned char array_length);
+int find_maximum(unsigned char *ptr, int array_length);
 
 
 
@@ -90,14 +90,14 @@ int find_maximum(unsigned char array_dataset[], unsigned char array_length);
  * end comparing each value in the array, storing the smallest values between 
  * two values.
  *
- * @param unsigned array_dataset[] - Array of data to determine minimum value
- * @param unsigned array_length - Length array_dataset
+ * @param unsigned char *ptr - Pointer to array to determine minimum value
+ * @param int array_length - Length array
  *
  * @return int minimum_value
  *
  */
 
-int find_minimum(unsigned char array_dataset[], unsigned char array_length);
+int find_minimum(unsigned char *ptr, int array_length);
 
 
 /**
@@ -112,14 +112,14 @@ int find_minimum(unsigned char array_dataset[], unsigned char array_length);
  * When first loop goes through all the positions of the array this will be sorted
  * and returned. 
  *
- * @param unsigned char array_dataset[] -  Array to be sorted
- * @param unsigned char array_length - Length of array_dataset
+ * @param unsigned char *ptr -  Pointer to array to be sorted
+ * @param int  array_length - Length of array
  *
  *
  * @return unsigned char array_dataset 
  */
 
-unsigned char sort_array(unsigned char array_dataset[], unsigned char array_length);
+unsigned char sort_array(unsigned char *ptr, int array_length);
 
 
 
@@ -148,12 +148,12 @@ void print_statistics(int minimum, int maximum, int mean, int median);
  *
  * Function print a given array to the screen. 
  *
- * @param unsigned char array_dataset - Array to be printed
- * @param unsigned char array_length - Size of array
+ * @param unsigned char *ptr - Pointer to array to be printed
+ * @param int array_length - Size of array
  *
  * @return No return
  */
-void print_array(unsigned char array_dataset[], unsigned char array_length);
+void print_array(unsigned char *ptr, int array_length);
 
 
 
